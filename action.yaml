@@ -12,7 +12,6 @@ inputs:
   homepage-template:
     description: 'Path to homepage template'
     required: false
-    default: config.json
   output:
     description: 'Output directory that contains the generated html files'
     required: false
