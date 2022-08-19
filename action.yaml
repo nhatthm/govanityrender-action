@@ -1,0 +1,34 @@
+---
+
+name: 'Generate html pages for custom Go import paths'
+description: 'Generate html pages for custom Go import paths'
+author: 'nhatthm'
+
+inputs:
+  config:
+    description: 'Path to config file'
+    required: false
+    default: config.json
+  homepage-template:
+    description: 'Path to homepage template'
+    required: false
+    default: config.json
+  output:
+    description: 'Output directory that contains the generated html files'
+    required: false
+    default: 'build'
+
+outputs: {}
+
+runs:
+  using: docker
+  image: docker://ghcr.io/nhatthm/govanityrender:latest
+  entrypoint: /bin/vanityrender
+  args:
+    - -config=${{ inputs.config }}
+    - -homepage-tpl=${{ inputs.homepage-template }}
+    - -out=${{ inputs.output }}
+
+branding:
+  icon: "package"
+  color: "green"
