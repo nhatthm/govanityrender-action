@@ -24,7 +24,7 @@ outputs: {}
 
 runs:
   using: docker
-  image: docker://ghcr.io/nhatthm/govanityrender:latest
+  image: docker://ghcr.io/nhatthm/govanityrender:dev
   entrypoint: /bin/vanityrender
   args:
     - -config=${{ inputs.config }}
