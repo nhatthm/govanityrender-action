@@ -12,6 +12,9 @@ inputs:
   homepage-template:
     description: 'Path to homepage template'
     required: false
+  modules:
+    description: 'A comma-separated list of modules to be rebuilt'
+    required: false
   output:
     description: 'Output directory that contains the generated html files'
     required: false
@@ -27,6 +30,7 @@ runs:
     - -config=${{ inputs.config }}
     - -homepage-tpl=${{ inputs.homepage-template }}
     - -out=${{ inputs.output }}
+    - -modules=${{ inputs.modules }}
 
 branding:
   icon: "package"
