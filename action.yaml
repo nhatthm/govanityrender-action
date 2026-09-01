@@ -12,6 +12,9 @@ inputs:
   homepage-template:
     description: 'Path to homepage template'
     required: false
+  404-template:
+    description: 'Path to 404 template'
+    required: false
   modules:
     description: 'A comma-separated list of modules to be rebuilt'
     required: false
@@ -29,6 +32,7 @@ runs:
   args:
     - -config=${{ inputs.config }}
     - -homepage-tpl=${{ inputs.homepage-template }}
+    - -404-tpl=${{ inputs['404-template'] }}
     - -out=${{ inputs.output }}
     - -modules=${{ inputs.modules }}
 
